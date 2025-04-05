@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://gqxc03uaj5cs"]
+
+[ext_resource type="PackedScene" uid="uid://nlmbp3nedc7h" path="res://art/randomBadHorshoeCrab.glb" id="1_4p45y"]
+[ext_resource type="Script" path="res://sp_mob.gd" id="1_d6q4h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18tam"]
+size = Vector3(3.24066, 0.889648, 1.62927)
+
+[node name="SPMob" type="CharacterBody3D" groups=["mob"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_d6q4h")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="randomBadHorshoeCrab" parent="Pivot" instance=ExtResource("1_4p45y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.108734, 0.0551758, 0.0778198)
+shape = SubResource("BoxShape3D_18tam")

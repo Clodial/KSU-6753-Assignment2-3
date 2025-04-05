@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmh88kebdf211"]
+
+[ext_resource type="AudioStream" uid="uid://dyupbcrsod1ye" path="res://art/CrummyWay.wav" id="1_5wldy"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_5wldy")
+volume_db = -10.524
+autoplay = true

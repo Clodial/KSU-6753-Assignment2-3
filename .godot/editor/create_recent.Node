@@ -1,0 +1,14 @@
+Timer
+Area3D
+CharacterBody3D
+Marker3D
+CollisionShape3D
+Node3D
+AnimationPlayer
+AudioStreamPlayer
+Label
+ColorRect
+TextureRect
+Control
+Node
+PathFollow3D

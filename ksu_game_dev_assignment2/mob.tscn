@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://btvrryvfl1jcr"]
+
+[ext_resource type="PackedScene" uid="uid://ykqwm5d5b041" path="res://art/mob.glb" id="1_6bv84"]
+[ext_resource type="Script" path="res://mob.gd" id="1_wd5nn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8d3f"]
+size = Vector3(1.66595, 1.55945, 2.57349)
+
+[sub_resource type="Animation" id="Animation_wjt0n"]
+resource_name = "float"
+length = 1.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/character:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.5, 0.9),
+"transitions": PackedFloat32Array(0.450625, 0.435275, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.139626, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.7, 1.06667),
+"transitions": PackedFloat32Array(0.450625, 0.435275, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.65, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ly3bc"]
+_data = {
+"float": SubResource("Animation_wjt0n")
+}
+
+[node name="Mob" type="CharacterBody3D" groups=["mob"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_wd5nn")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="mob" parent="Pivot" instance=ExtResource("1_6bv84")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.15527e-05, 0.279724, -0.0350342)
+shape = SubResource("BoxShape3D_r8d3f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ly3bc")
+}

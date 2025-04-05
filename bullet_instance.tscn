@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://chgkf2q5q332a"]
+
+[ext_resource type="Script" path="res://bullet_instance.gd" id="1_14wm3"]
+[ext_resource type="PackedScene" uid="uid://cllvxo6oo6am5" path="res://art/bullet.glb" id="2_ytf3v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uyddl"]
+radius = 2.0
+
+[node name="Bullet_Instance" type="Area3D" groups=["bullet"]]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+collision_mask = 6
+script = ExtResource("1_14wm3")
+speed = -100
+
+[node name="Pivot" type="Node3D" parent="." groups=["bullet"]]
+
+[node name="bullet" parent="Pivot" groups=["bullet"] instance=ExtResource("2_ytf3v")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["bullet"]]
+shape = SubResource("SphereShape3D_uyddl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

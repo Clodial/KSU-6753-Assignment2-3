@@ -1,0 +1,17 @@
+res://main.tscn
+res://player.tscn
+res://player.gd
+res://mob.tscn
+res://mob.gd
+res://main.gd
+res://sp_mob.tscn
+res://sp_mob.gd
+res://collectible.tscn
+res://score_label.gd
+res://music_player.tscn
+res://area_3d.tscn
+res://Bullet_Instance.tscn
+res://bullet_instance.tscn
+res://bullet_instance.gd
+res://user_interface.gd
+res://collectible.gd
