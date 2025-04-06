@@ -10,14 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Squash the Creeps (3D)"
-run/main_scene="res://main.tscn"
+config/name="KSU 6753 Assignment 2 & 3"
+run/main_scene="res://game_start.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.png"
-
-[autoload]
-
-MusicPlayer="*res://music_player.tscn"
 
 [dotnet]
 

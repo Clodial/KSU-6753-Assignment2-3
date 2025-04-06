@@ -18,10 +18,10 @@ size = Vector3(20, 2, 20)
 [sub_resource type="BoxMesh" id="BoxMesh_paqv4"]
 size = Vector3(20, 2, 20)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5anj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stq1e"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_3y6o1"]
-material = SubResource("StandardMaterial3D_b5anj")
+material = SubResource("StandardMaterial3D_stq1e")
 
 [sub_resource type="Curve3D" id="Curve3D_20nfs"]
 _data = {
@@ -189,7 +189,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_20nfs")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.00201206, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00201206, -32.9243, 0, -33.057)
+transform = Transform3D(-0.00201277, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00201277, -32.9243, 0, -33.057)
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 0.05

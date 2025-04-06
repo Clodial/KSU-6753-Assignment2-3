@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://i3uo57lhy71u"]
+
+[ext_resource type="Script" path="res://game_start.gd" id="1_umgbl"]
+[ext_resource type="PackedScene" uid="uid://dc0bgbwxxsn7y" path="res://main.tscn" id="2_0n7nt"]
+[ext_resource type="Script" path="res://player_progress.gd" id="3_3c3m8"]
+[ext_resource type="PackedScene" uid="uid://byl5icx0vhbds" path="res://main2.tscn" id="3_7fa45"]
+[ext_resource type="AudioStream" uid="uid://bd06o5nsdx0n3" path="res://art/FocusUpServe.wav" id="4_aiccu"]
+[ext_resource type="AudioStream" uid="uid://d2dkhg8osba26" path="res://art/CaffeineAddiction-final.wav" id="6_7gs1h"]
+[ext_resource type="AudioStream" uid="uid://c38jyqvmf5ppr" path="res://art/MidnightChallenge-final.wav" id="7_x6bja"]
+
+[node name="GameStart" type="Node2D"]
+script = ExtResource("1_umgbl")
+level1 = ExtResource("2_0n7nt")
+level2 = ExtResource("3_7fa45")
+
+[node name="main_menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Level1Button" type="Button" parent="main_menu"]
+offset_left = 242.0
+offset_top = 215.0
+offset_right = 442.0
+offset_bottom = 315.0
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="main_menu"]
+offset_left = 759.0
+offset_top = 219.0
+offset_right = 959.0
+offset_bottom = 319.0
+text = "Level 2
+"
+
+[node name="Level1_Score" type="Label" parent="main_menu"]
+offset_left = 243.0
+offset_top = 320.0
+offset_right = 283.0
+offset_bottom = 343.0
+
+[node name="Level2_Score" type="Label" parent="main_menu"]
+offset_left = 762.0
+offset_top = 325.0
+offset_right = 802.0
+offset_bottom = 348.0
+
+[node name="Sound_Slider" type="HSlider" parent="main_menu"]
+offset_left = 467.0
+offset_top = 484.0
+offset_right = 747.0
+offset_bottom = 500.0
+min_value = -70.0
+max_value = -20.0
+step = 0.1
+value = -20.0
+
+[node name="Control_label" type="Label" parent="main_menu"]
+offset_left = 471.0
+offset_top = 450.0
+offset_right = 568.0
+offset_bottom = 473.0
+text = "Sound Slider"
+
+[node name="saveConfig_button" type="Button" parent="main_menu"]
+offset_left = 645.0
+offset_top = 507.0
+offset_right = 743.0
+offset_bottom = 538.0
+text = "Save Config"
+
+[node name="Home_Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_aiccu")
+autoplay = true
+
+[node name="PlayerProgress" type="Node" parent="."]
+script = ExtResource("3_3c3m8")
+
+[node name="Current_Level" type="Node" parent="."]
+
+[node name="Level_Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7gs1h")
+
+[node name="Level2_Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_x6bja")
+
+[connection signal="pressed" from="main_menu/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="main_menu/Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="main_menu/saveConfig_button" to="." method="_on_save_config_button_pressed"]

@@ -3,6 +3,9 @@ extends Node
 @export var sp_mob_scene: PackedScene
 @export var coin_scene: PackedScene
 var health = 3
+var score = 0
+
+signal go_home
 
 func _ready():
 	$UserInterface/Retry.hide()
@@ -43,7 +46,7 @@ func _on_player_hit() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") && $UserInterface/Retry.visible:
-		get_tree().reload_current_scene()
+		go_home.emit()
 
 
 func _on_player_instant_death() -> void:
@@ -54,7 +57,6 @@ func _on_player_instant_death() -> void:
 func _on_start_timer_timeout() -> void:
 	var player = $Player
 	player.hit.connect($UserInterface._display_health())
-
 
 func _on_score_label_new_life() -> void:
 	if health < 5:
