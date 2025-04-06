@@ -45,7 +45,7 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_wd5nn")
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." groups=["death_mob"]]
 
 [node name="mob" parent="Pivot" instance=ExtResource("1_6bv84")]
 

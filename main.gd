@@ -46,8 +46,12 @@ func _on_player_hit() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") && $UserInterface/Retry.visible:
+		score = $UserInterface/ScoreLabel._on_death();
 		go_home.emit()
 
+func _get_score():
+	score = $UserInterface/ScoreLabel._on_death();
+	return score;
 
 func _on_player_instant_death() -> void:
 	$MobTimer.stop()

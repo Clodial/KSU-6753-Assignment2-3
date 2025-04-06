@@ -35,3 +35,6 @@ func _on_coin_score():
 	if hidden_score >= 50:
 		new_life.emit()
 		hidden_score -= 50
+	
+func _on_death():
+	return score

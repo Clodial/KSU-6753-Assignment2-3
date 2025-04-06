@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1fkkn411pmaf"]
+
+[ext_resource type="PackedScene" uid="uid://nlmbp3nedc7h" path="res://art/randomBadHorshoeCrab.glb" id="1_7molq"]
+[ext_resource type="Script" path="res://follow_node.gd" id="1_gg5d4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4watk"]
+size = Vector3(3.24066, 0.889648, 1.62927)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_doran"]
+height = 0.5
+radius = 20.0
+
+[node name="FollowNode" type="CharacterBody3D" groups=["death_mob"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_gg5d4")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="randomBadHorshoeCrab" parent="Pivot" instance=ExtResource("1_7molq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="main_collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.108734, 0.0551758, 0.0778198)
+shape = SubResource("BoxShape3D_4watk")
+
+[node name="follow_player_box" type="Area3D" parent="."]
+
+[node name="follow_radius" type="CollisionShape3D" parent="follow_player_box"]
+shape = SubResource("CylinderShape3D_doran")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[connection signal="body_entered" from="follow_player_box" to="." method="_on_follow_player_box_body_entered"]
+[connection signal="body_exited" from="follow_player_box" to="." method="_on_follow_player_box_body_exited"]

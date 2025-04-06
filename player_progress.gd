@@ -40,10 +40,11 @@ func _save_game(level1_score, level2_score) -> void:
 	
 func load_game():
 	if not FileAccess.file_exists(SAVE_PATH):
+		print("yo")
 		return new_game()
 	var load_file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	var json = JSON.new()
 	json.parse(load_file.get_line())
 	var save_dict = json.get_data() as Dictionary
-	print(save_dict);
+	load_file.store_line(JSON.stringify(save_dict))
 	return save_dict

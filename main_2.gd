@@ -1,6 +1,7 @@
 extends Node
 @export var coin_scene: PackedScene
 var health = 3
+var score = 0
 
 signal go_home
 
@@ -27,9 +28,11 @@ func _on_player_hit() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") && $UserInterface/Retry.visible:
-		print("yo")
+		score = $UserInterface/ScoreLabel._on_death()
 		go_home.emit()
 
+func _get_score():
+	return score;
 
 func _on_player_instant_death() -> void:
 	$UserInterface/Retry.show()

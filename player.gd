@@ -82,5 +82,8 @@ func instadie():
 	queue_free()
 
 func _on_mob_detector_body_entered(body: Node3D) -> void:
-	body.queue_free()
-	die()
+	if body.is_in_group("mob"):
+		body.queue_free()
+		die()
+	else:
+		instadie()

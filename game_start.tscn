@@ -13,6 +13,9 @@ script = ExtResource("1_umgbl")
 level1 = ExtResource("2_0n7nt")
 level2 = ExtResource("3_7fa45")
 
+[node name="PlayerProgress" type="Node" parent="."]
+script = ExtResource("3_3c3m8")
+
 [node name="main_menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -70,18 +73,18 @@ text = "Save Config"
 
 [node name="Home_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_aiccu")
+volume_db = -80.0
 autoplay = true
-
-[node name="PlayerProgress" type="Node" parent="."]
-script = ExtResource("3_3c3m8")
 
 [node name="Current_Level" type="Node" parent="."]
 
 [node name="Level_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_7gs1h")
+volume_db = -80.0
 
 [node name="Level2_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_x6bja")
+volume_db = -80.0
 
 [connection signal="pressed" from="main_menu/Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="main_menu/Level2Button" to="." method="_on_level_2_button_pressed"]

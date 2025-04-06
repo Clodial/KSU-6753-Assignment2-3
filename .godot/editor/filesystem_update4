@@ -7,3 +7,10 @@ res://main2.tscn
 res://main_menu.tscn
 res://main.gd
 res://main_2.gd
+res://score_label.gd
+res://follow_node.tscn
+res://mob.tscn
+res://sp_mob.tscn
+res://follow_node.gd
+res://player.tscn
+res://player.gd
