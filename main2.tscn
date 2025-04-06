@@ -393,6 +393,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Press Enter to retry"
 
+[node name="FollowNode5" parent="." instance=ExtResource("3_voi2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4459, 0.660014, -27.4995)
+
+[node name="FollowNode6" parent="." instance=ExtResource("3_voi2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5205, 0.660014, 28.0397)
+
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="instant_death" from="Player" to="." method="_on_player_instant_death"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

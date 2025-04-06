@@ -21,6 +21,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Level1Button" type="Button" parent="main_menu"]
+layout_mode = 0
 offset_left = 242.0
 offset_top = 215.0
 offset_right = 442.0
@@ -28,6 +29,7 @@ offset_bottom = 315.0
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="main_menu"]
+layout_mode = 0
 offset_left = 759.0
 offset_top = 219.0
 offset_right = 959.0
@@ -36,28 +38,32 @@ text = "Level 2
 "
 
 [node name="Level1_Score" type="Label" parent="main_menu"]
+layout_mode = 0
 offset_left = 243.0
 offset_top = 320.0
 offset_right = 283.0
 offset_bottom = 343.0
 
 [node name="Level2_Score" type="Label" parent="main_menu"]
+layout_mode = 0
 offset_left = 762.0
 offset_top = 325.0
 offset_right = 802.0
 offset_bottom = 348.0
 
 [node name="Sound_Slider" type="HSlider" parent="main_menu"]
+layout_mode = 0
 offset_left = 467.0
 offset_top = 484.0
 offset_right = 747.0
 offset_bottom = 500.0
 min_value = -70.0
-max_value = -20.0
+max_value = 0.0
 step = 0.1
 value = -20.0
 
 [node name="Control_label" type="Label" parent="main_menu"]
+layout_mode = 0
 offset_left = 471.0
 offset_top = 450.0
 offset_right = 568.0
@@ -65,6 +71,7 @@ offset_bottom = 473.0
 text = "Sound Slider"
 
 [node name="saveConfig_button" type="Button" parent="main_menu"]
+layout_mode = 0
 offset_left = 645.0
 offset_top = 507.0
 offset_right = 743.0

@@ -1,6 +1,6 @@
 extends Node2D
 
-var sound_level = -30.0;
+var sound_level = -10.0;
 @export var level1: PackedScene
 @export var level2: PackedScene
 var curGame
